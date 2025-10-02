@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rnews - Berita Terkini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SPLASH SCREEN -->
+        <div class="splash-screen" id="splashScreen">
+            <img src="rnews.png" alt="News">
+            <h1>Semua Info Ada Di <span class="highlight">R</span>news.</h1>
+            <p class="subtitle">Masuk Untuk Melihat Info Terkini</p>
+            <button class="btn-primary" onclick="showHome()">MASUK</button>
+        </div>
+
+        <!-- HOME SCREEN -->
+        <div class="home-screen" id="homeScreen">
+            <div class="header">
+                <div class="logo">R<span>NEWS</span></div>
+                <svg class="notification-icon" fill="white" viewBox="0 0 24 24">
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                </svg>
+            </div>
+
+            <div class="featured-news">
+                <!-- BERITA UTAMA - Klik untuk buka link -->
+                <div class="news-card-large" data-url="https://www.riaukepri.com/2025/09/30/polisi-meranti-sebut-sumber-api-yang-mengakibatkan-kebakaran-sma-negeri-1-tebingtinggi/" onclick="openNews(this)">
+                    <img src="https://www.riaukepri.com/wp-content/uploads/2025/09/IMG-20250930-WA0105-664x498.jpg" alt="UNESCO">
+                    <div class="bookmark-icon" onclick="event.stopPropagation(); toggleBookmark(this)">📑</div>
+                    <div class="overlay">
+                        <span class="category-badge">Travel</span>
+                        <h2 class="news-title">Polisi Meranti Sebut Sumber Api Yang Mengakibatkan Kebakaran SMA Negeri 1 Tebingtinggi </h2>
+                        <div class="news-meta">
+                            <span style="color: #ff4757;">●</span>
+                            <span>KEPURUN News</span>
+                            <span>2 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categories">
+                <button class="category-btn active">General</button>
+                <button class="category-btn">Business</button>
+                <button class="category-btn">Sports</button>
+                <button class="category-btn">Politics</button>
+                <button class="category-btn">Technology</button>
+            </div>
+
+            <div class="news-list">
+                <!-- BERITA 1 - Ganti URL dengan link berita asli Anda -->
+                <a href="https://www.instagram.com/vel.vetroseoct/?utm_source=ig_web_button_share_sheet" target="_blank" class="news-item">
+                    <img src="c:\Users\ASUS\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\66BE31E4C40D676991F2405AAECC6934\Gambar WhatsApp 2025-09-28 pukul 20.30.37_530d467f.jpg" alt="Paris">
+                    <div class="news-item-content">
+                        <div class="news-item-title">Hari ini nanda suci ulang</div>
+                        <div class="news-item-meta">
+                            <span> Intertain</span>
+                            <span>14 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- BERITA 2 - Ganti URL dengan link berita asli Anda -->
+                <a href="https://ekonomi.bisnis.com/read/20251001/44/1916676/breaking-news-kilang-dumai-milik-pertamina-terbakar" target="_blank" class="news-item">
+                    <img src="https://images.bisnis.com/thumb/posts/2025/10/01/1916676/kilang_dumai_terbakar_1759331995.jpg?w=450&h=237" alt="Facebook">
+                    <div class="news-item-content">
+                        <div class="news-item-title">Breaking News!! Kilang Dumai MIlik Pertamina Terbakar</div>
+                        <div class="news-item-meta">
+                            <span>🌐 News</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- BERITA 3 - Ganti URL dengan link berita asli Anda -->
+                <a href="https://www.bbc.com/sport/football/68234567" target="_blank" class="news-item">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400" alt="Sports">
+                    <div class="news-item-content">
+                        <div class="news-item-title">Champions League news conferences</div>
+                        <div class="news-item-meta">
+                            <span>⚽ Sports</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="bottom-nav">
+                <div class="nav-item active">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- DETAIL SCREEN -->
+        <div class="detail-screen" id="detailScreen">
+            <div class="detail-header">
+                <button class="back-btn" onclick="showHome()">←</button>
+                <button class="share-btn">⤴</button>
+            </div>
+
+            <div class="publisher-info">
+                <div class="publisher-logo">BBC</div>
+                <div class="publisher-name">BBC News</div>
+                <button class="follow-btn">+ Follow</button>
+                <p class="publisher-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="publisher-stats">
+                <div class="stat-item">
+                    <div class="stat-value">230</div>
+                    <div class="stat-label">News</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">25k</div>
+                    <div class="stat-label">Follower</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">120</div>
+                    <div class="stat-label">Following</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">50k</div>
+                    <div class="stat-label">Uploaded</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-news active">News</button>
+                <button class="btn-news">Update</button>
+            </div>
+
+            <div class="news-list">
+                <!-- Berita di detail screen juga bisa diklik -->
+                <a href="https://www.bbc.com/travel/article/20230515-unesco-world-heritage-site" target="_blank" class="news-item">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400" alt="UNESCO">
+                    <div class="news-item-content">
+                        <div class="news-item-title">The UNESCO World Heritage Site with sky-high house prices</div>
+                        <div class="news-item-meta">
+                            <span>🌐 News</span>
+                            <span>7 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.bbc.com/news/technology-58926942" target="_blank" class="news-item">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400" alt="Facebook">
+                    <div class="news-item-content">
+                        <div class="news-item-title">Facebook to hire 10,000 in EU to work on metaverse</div>
+                        <div class="news-item-meta">
+                            <span>💼 Business</span>
+                            <span>8 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="bottom-nav">
+                <div class="nav-item active">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+========================================
+CARA MENAMBAHKAN LINK BERITA ANDA SENDIRI:
+========================================
+
+Ada 2 cara untuk menambahkan link ke berita:
+
+1. CARA PERTAMA - Menggunakan tag <a> (RECOMMENDED):
+   
+   <a href="LINK_BERITA_ANDA" target="_blank" class="news-item">
+       <img src="URL_GAMBAR" alt="Judul">
+       <div class="news-item-content">
+           <div class="news-item-title">Judul Berita Anda</div>
+           <div class="news-item-meta">
+               <span>🌐 News</span>
+               <span>Waktu</span>
+           </div>
+       </div>
+   </a>
+
+2. CARA KEDUA - Menggunakan onclick (untuk berita featured):
+   
+   <div class="news-card-large" data-url="LINK_BERITA_ANDA" onclick="openNews(this)">
+       ... konten berita ...
+   </div>
+
+CONTOH LINK BERITA YANG BISA ANDA GUNAKAN:
+- https://www.bbc.com/news
+- https://www.cnnindonesia.com
+- https://www.detik.com/tag/berita-terkini
+- https://news.google.com
+- dll.
+
+CARA MENGGANTI LINK:
+1. Cari bagian HTML berita yang ingin diganti
+2. Ganti URL di atribut href="..." atau data-url="..."
+3. Save dan refresh browser
+
+target="_blank" = Membuka link di tab baru
+-->
